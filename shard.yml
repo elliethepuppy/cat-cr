@@ -1,0 +1,13 @@
+name: cat-cr
+version: 0.1.0
+
+authors:
+  - ellie :3 <ellsylv@proton.me>
+
+targets:
+  cat-cr:
+    main: src/cat-cr.cr
+
+crystal: '>= 1.18.2'
+
+license: MIT

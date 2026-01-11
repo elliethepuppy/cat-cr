@@ -1,0 +1,7 @@
+/docs/
+/lib/
+/bin/
+/.shards/
+/build/
+/src/cat.cr
+*.dwarf
