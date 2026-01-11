@@ -1,6 +1,6 @@
 # cat-cr
 
-`cat-cr` is a crystal reimplementation of the standard GNU `cat` utility. it's still a work in progress, but it functions in exactly the way any average user would probably expect (just spitting out the text of a file)
+`cat-cr` is a crystal reimplementation of the standard unix `cat` utility. it's still a work in progress, but it functions in exactly the way any average user would probably expect (just spitting out the text of a file)
 
 ## Installation
 
