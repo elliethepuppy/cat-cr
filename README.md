@@ -32,4 +32,4 @@ i need help with finding all the special characters that `cat` proper outputs wi
 
 ## Contributors
 
-- [ellie :3](https://github.com/your-github-user) - creator and maintainer
+- [ellie :3](https://elliethepuppy.github.io) - creator and maintainer
