@@ -11,8 +11,28 @@ git clone https://github.com/elliethepuppy/cat-cr.git && cd cat-cr
 ```
 
 ``` sh
-mkdir build && crystal build src/cat-cr.cr -o build/[whatever you'd like to call it] --release --no-debug
+sh build.sh && sh install.sh
 ```
+
+optionally build manually:
+
+``` sh
+mkdir build && crystal build src/cat-cr.cr -o build/[whatever you'd like to call it] --release --no-debug --warnings all --error-on-warnings
+```
+
+then install manually:
+
+``` sh
+cp build/[name you chose] ~/.local/bin
+```
+
+if you chose to name it `cat`, you'll need to rename the system package to avoid clashing:
+
+``` sh
+sudo mv /usr/bin/cat /usr/bin/gcat
+```
+
+you don't have to use `gcat`. that's just what i do to denote "gnu cat" as opposed to my own when they are both in the `$PATH`
 
 ## Usage
 

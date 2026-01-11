@@ -2,7 +2,7 @@ require "option_parser"
 
 # TODO: Write documentation for `CatCr`
 module CatCr
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   # `parse_file` is the all-in-one checker. it takes in the *content : String* of
   # a file, along with all operational flags that `cat` normally takes, then
@@ -96,6 +96,7 @@ number_lines = false
 squeeze_blank = false
 show_tabs = false
 files = [] of String
+content = String.new
 
 # create parser
 parser = OptionParser.new do |parser|
@@ -163,7 +164,6 @@ end
 # out of its loop and continues through the files.
 files.each do |file|
   if file == "-"
-    content = String.new
     while true
       content = gets
       if content.nil?
@@ -174,7 +174,17 @@ files.each do |file|
       puts output
     end
   else
-    content = File.read(file)
+    begin
+      content = File.read(file)
+    rescue File::NotFoundError
+      STDERR.puts "#{file} could not be found!"
+      STDERR.puts parser
+      exit -1
+    rescue IO::Error
+      STDERR.puts "#{file} is not a file!"
+      STDERR.puts parser
+      exit -1
+    end
     unless content.nil?
       output = CatCr.parse_file(content.not_nil!, show_all, number_nonblank, show_nonprinting, show_ends, number_lines, squeeze_blank, show_tabs)
       puts output
