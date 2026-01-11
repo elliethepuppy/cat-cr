@@ -111,11 +111,11 @@ parser = OptionParser.new do |parser|
   parser.on("-T", "--show-tabs", "display TAB characters as ^I") { show_tabs = true }
   parser.on("-h", "--help", "show this help") do
     puts parser
-    exit 1
+    exit 0
   end
   parser.on("-V", "--version", "show the version number") do
     puts CatCr::VERSION
-    exit 1
+    exit 0
   end
 
   # here is where each file name supplied is entered into *files*. the path is
@@ -150,7 +150,7 @@ if files.size < 1
   while true
     content = gets
     if content.nil?
-      exit 1
+      exit 0
     end
     output = CatCr.parse_file(content.not_nil!, show_all, number_nonblank, show_nonprinting, show_ends, number_lines, squeeze_blank, show_tabs) + "\n"
     puts output
