@@ -4,7 +4,7 @@
 
 ## Installation
 
-installation requires the crystal compiler
+installation requires the [crystal compiler](https://crystal-lang.org/install)
 
 ``` sh
 git clone https://github.com/elliethepuppy/cat-cr.git && cd cat-cr
